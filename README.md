@@ -1,11 +1,11 @@
-# CV Job Fit Analyzer
+# Candidate Evaluator LLM
 
-AI-powered tool that scores how well your CV matches a job description. Returns a score out of 10 plus structured feedback on strong skills, missing skills, and a recommendation.
+AI-powered tool that scores how well a candidate's CV matches a job description. Returns a score out of 10 plus structured feedback on strong skills, missing skills, and a recommendation.
 
 ## Stack
 
 - **Frontend**: Next.js 14 (App Router), TypeScript, Tailwind CSS
-- **Backend**: Python FastAPI, pypdf, python-docx, Anthropic Claude API
+- **Backend**: Python FastAPI, pypdf, python-docx, Groq API
 
 ## Quick Start
 
@@ -24,10 +24,10 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Copy `.env.example` to `.env` and add your Anthropic API key:
+Copy `.env.example` to `.env` and add your Groq API key:
 
 ```
-ANTHROPIC_API_KEY=sk-ant-...
+GROQ_API_KEY=gsk_...
 ```
 
 Start the server:
@@ -86,7 +86,7 @@ Response:
 ## Project Structure
 
 ```
-cv-evaluator/
+candidate-evaluator-llm/
 ├── backend/
 │   ├── main.py                  # FastAPI app + /evaluate endpoint
 │   ├── requirements.txt
@@ -95,7 +95,7 @@ cv-evaluator/
 │   │   └── schemas.py           # Pydantic response models
 │   └── services/
 │       ├── cv_extractor.py      # PDF/DOCX text extraction
-│       └── llm_evaluator.py     # Claude API integration
+│       └── llm_evaluator.py     # Groq API integration
 └── frontend/
     ├── app/
     │   ├── layout.tsx
