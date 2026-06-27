@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  background-color: #04040c;
+}
+
+body {
+  background-color: #04040c;
+  color: #e4e4e7;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
+}
+
+/* ── AI grid mesh ────────────────────────────────────────────────────────── */
+.ai-grid {
+  background-image:
+    linear-gradient(rgba(124, 58, 237, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.06) 1px, transparent 1px);
+  background-size: 52px 52px;
+}
+
+/* ── Gradient text ───────────────────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #a78bfa 0%, #60a5fa 50%, #34d399 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradientShift 5s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+/* ── Card gradient border ────────────────────────────────────────────────── */
+.card-glow {
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
+.card-glow:hover {
+  box-shadow: 0 0 0 1px rgba(124, 58, 237, 0.4), 0 8px 32px rgba(124, 58, 237, 0.12);
+}
+
+/* ── Shimmer button ──────────────────────────────────────────────────────── */
+.btn-shimmer {
+  background: linear-gradient(
+    110deg,
+    #6d28d9 0%,
+    #7c3aed 20%,
+    #a78bfa 40%,
+    #7c3aed 60%,
+    #6d28d9 80%,
+    #7c3aed 100%
+  );
+  background-size: 200% auto;
+}
+.btn-shimmer:hover {
+  animation: shimmer 1.5s linear infinite;
+}
+
+/* ── Selection ───────────────────────────────────────────────────────────── */
+::selection {
+  background-color: rgba(124, 58, 237, 0.35);
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #6d28d9; }
